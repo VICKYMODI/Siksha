@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Welcome Basic User!</h1>
+
+  <form name = "saveIP" [formGroup] = "saveIP" ngNativeValidate>
+    <div *ngFor = "let v of maxBasic">
+      <div *ngIf = "v <= iter" >
+        <div>
+            <input type="text" class="form-control" formControlName="ip{{iter}}" pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$" required [ngClass]="{'is-invalid':saveIP.get('ip1').touched && saveIP.get('ip1').invalid}" ><br>
+
+            <div *ngIf="saveIP.get('ip1').touched && saveIP.get('ip1').invalid"  class="invalid-feedback">
+                <div *ngIf="saveIP.get('ip1').errors.required">IP is required</div>
+                <div *ngIf="saveIP.get('ip1').errors.pattern">Invalid IP address</div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-ip">
+      <button (click) = "removeTextbox()" style="background: aqua;">-</button>
+      &nbsp;&nbsp;
+      <button (click) = "addTextbox()" style="background: aqua;"> + </button>
+    </div>
+    <button (click) = "IPSave()" style="background: aqua;">Save</button>
+    
+  </form>
+</div>
+    
+
+

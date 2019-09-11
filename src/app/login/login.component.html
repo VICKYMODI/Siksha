@@ -1,0 +1,10 @@
+<div>
+<h1>
+    Welcome to {{ Siksha }}!
+  </h1>
+  <select (change)="onChange($event)">
+    <option *ngFor="let v of values" [value]="v">{{v}}</option>
+  </select>
+    <button (click)="changeUser()"> Submit </button>
+
+</div>
