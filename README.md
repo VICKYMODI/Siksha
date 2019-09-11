@@ -17,3 +17,7 @@ IP validator
 3. To Run :
    From angular CLI
 	type : ng serve
+
+
+4. node-modules file is missing from GIT,as it contained huge number of files ,which git is not allowing to upload.
+	So,inorder to run it,move any node-modules file to this and then run
